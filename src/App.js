@@ -1,6 +1,6 @@
 import ChatBubble from "./chatbubble";
 import { useState,useEffect } from "react";
-import { PaperAirplaneIcon} from '@heroicons/react/24/solid'
+import { PaperAirplaneIcon} from '@heroicons/react/24/outline'
 
 
 function App() {
@@ -44,14 +44,14 @@ const sendChat=()=>{
 
 
   return (
-    <div className='bg-gray-600 w-full h-full flex justify-center'>
-      <div className="w-4/6 h-[746px] flex flex-col-reverse bg-gray-300">
+    <div className='bg-[#FFFFFF] w-full h-full flex justify-center'>
+      <div className="w-4/6 h-[746px] flex flex-col-reverse rounded-xl bg-[#F6F5F5]">
 
       {/* <div className=""> */}
-       <input  type="text" onChange={handlesetChat} value={chat}  className="w-90% mx-6 my-4 h-10 outline-none  px-4 rounded-full" name="" id="" />
+       <input  type="text" onChange={handlesetChat} value={chat}  className="w-90% mx-6 my-4 h-10 outline-none border border-[#1F3CA0]  px-4 rounded-full" name="" id="" />
         {/* <ChatBubble/> */}
         <div>
-        <PaperAirplaneIcon onClick={sendChat} className="w-5 h-5  -rotate-45 absolute right-[18rem] top-[43rem] mt-2.5 "/>
+        <PaperAirplaneIcon onClick={sendChat} className="w-5 h-5 text-[#1F3CA0]  -rotate-45 absolute right-[18rem] top-[43rem] mt-2.5 "/>
         </div>
       {/* </div> */}
         
