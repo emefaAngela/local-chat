@@ -2,6 +2,18 @@ import ChatBubble from "./chatbubble";
 import { useState,useEffect } from "react";
 import { PaperAirplaneIcon} from '@heroicons/react/24/outline'
 
+// Comment: Add comments relevant to your code to separate parts of your code.
+// 1: Please avoid adding too make white spaces in between lines.
+// 2: Avoid inconsistency [its either you don't use semi-colons at all or you use it everywhere. I prefer you don't though].
+// 3. Make your tabs consistent. Make sure closing tags or brackets match with their opening ones.
+// 4. Spaces before and after =, { }, ( ) need to be consistent.
+// 5. User Arrow functions for only callbacks. It will make your code more readable.
+// 6. Be consistent with your namings too.
+//   6a. File names should start with a capital and be camelCased. eg: ChatBubble.js
+//   6b. Component names should be the same as their file names. eg: Function ChartBubble () {}
+//   6c. Variable and function names should be camelCased.
+// 7. Code is written vertically. Always make sure your code is going down and sideways.
+// Comment: I'm going to rewrite your chatbubble.js so you lean from it to improve the rest.
 
 function App() {
   const [chat,setChat]=useState('');
@@ -26,19 +38,18 @@ const handlesetChat=(e)=>{
 
 
 const sendChat=()=>{
-  if (chat.trim() !== "") {
-    const currentDate = new Date();
-    const hours = currentDate.getHours();
-    const minutes = currentDate.getMinutes();
-    const time = `${hours}:${minutes < 10 ? '0' + minutes : minutes}`;
-    const user = sessionStorage.getItem('username');
-    const newChat = { id: Date.now(), text: chat, time, user };
-
-      const updatedChats = [...chats, newChat];
-      localStorage.setItem('chats', JSON.stringify(updatedChats));
-      setChats(updatedChats);
-      setChat('');
-  }
+	// User early returns. Much more cleaner
+	if (chat.trim() === "") return
+	const currentDate = new Date(); // You can move these to a separate utility function or simplify it
+	const hours = currentDate.getHours();
+	const minutes = currentDate.getMinutes();
+	const time = `${hours}:${minutes < 10 ? '0' + minutes : minutes}`;
+	const user = sessionStorage.getItem('username');
+	const newChat = { id: Date.now(), text: chat, time, user };
+	const updatedChats = [...chats, newChat];
+	localStorage.setItem('chats', JSON.stringify(updatedChats));
+	setChats(updatedChats);
+	setChat('');
 }
 
 
