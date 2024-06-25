@@ -1,6 +1,6 @@
 //Modules
 import React from 'react'
-import ChatBubble from './ChatBubble'
+import ChatBubble from './chatbubble'
 import { useState,useEffect } from 'react'
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline'
 import { tw } from '../src/utils/tailwind'
