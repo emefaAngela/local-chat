@@ -2,7 +2,8 @@
 import React, { useMemo } from 'react'
 
 // Component: Chart bubble
-function ChatBubble ({ chat,time, user }) {
+// eslint-disable-next-line react/prop-types
+function ChatBubble ({ chat, time, user }) {
 	// Data
 	const username = sessionStorage.getItem('username')
 
@@ -14,7 +15,7 @@ function ChatBubble ({ chat,time, user }) {
 		<div className={`flex max-w-sx flex-col
 			${isUser
 				? 'self-end'
-				:'self-start'
+				: 'self-start'
 			}`}>
 			<div className={`flex space-x-1 -mb-4 text-xs text-center ml-3
 				${isUser
@@ -34,7 +35,7 @@ function ChatBubble ({ chat,time, user }) {
 				}`}>
 				{chat}
 			</div>
-		</div>		
+		</div>
 	)
 }
 
