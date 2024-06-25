@@ -23,8 +23,8 @@ function ChatBubble ({ chat, time, user }) {
 					: 'self-start'
 				}`}>
 				{isUser
-					? <div>you ,</div>
-					: <div>{username},  </div>
+					? <div>you,</div>
+					: <div>{user},  </div>
 				}
 				<div className="text-[10px]">{time}</div>
 			</div>
