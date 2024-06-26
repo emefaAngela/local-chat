@@ -57,11 +57,18 @@ const sendChat = () => {
 	setChat('')
 }
 
+function handleKeyDown(event) {
+  if (event.keyCode === 13) {
+    //alert('Enter key was pressed')
+    sendChat()
+  }
+}
+
 //Render
   return (
     <div className={tw(
       'flex justify-center',
-      'w-full h-full',
+      'w-full h-full ',
       'bg-[#FFFFFF]'
     )}>
       <div className={tw(
@@ -73,6 +80,7 @@ const sendChat = () => {
        <input
         type="text"
         onChange={handlesetChat}
+        onKeyDown={handleKeyDown}
         value={chat}
         className={tw(
         'w-90% mx-6 my-4 h-10',
